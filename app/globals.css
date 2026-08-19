@@ -72,7 +72,7 @@ footer { padding:65px 3.4vw 25px; background:#efede7; display:grid; grid-templat
 .footer-brand img { width:57px; height:57px; object-fit:contain; mix-blend-mode:multiply; }
 .footer-brand p { margin:0; }
 .footer-contact { justify-self:end; min-width:min(100%,400px); }
-.footer-contact > a { display:flex; align-items:center; justify-content:space-between; margin-top:17px; padding:0 0 12px; border-bottom:1px solid var(--ink); font-size:clamp(19px,2.3vw,31px); letter-spacing:-.05em; }
+.contact-soon { display:flex; align-items:flex-end; justify-content:space-between; margin:17px 0 0; padding:0 0 12px; border-bottom:1px solid var(--ink); font-size:clamp(19px,2.3vw,31px); line-height:.95; letter-spacing:-.05em; }
 .footer-note { margin:16px 0 0; color:#6c6970; font-size:12px; line-height:1.45; }
 .footer-bottom { grid-column:1/-1; display:flex; justify-content:space-between; padding-top:87px; font:10px "DM Mono",monospace; letter-spacing:.06em; }
 .footer-bottom a { text-decoration:underline; text-underline-offset:3px; }

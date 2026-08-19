@@ -90,8 +90,8 @@ export default function Home() {
         </div>
         <div className="footer-contact">
           <p className="eyebrow">Keep in touch</p>
-          <a href="mailto:hello@meowforge.studio">hello@meowforge.studio <Arrow /></a>
-          <p className="footer-note">For news, creative opportunities,<br />and future transmissions.</p>
+          <p className="contact-soon">Contact channel<br />coming soon <Arrow /></p>
+          <p className="footer-note">Follow future transmissions from<br />Meowforge Studio.</p>
         </div>
         <div className="footer-bottom">
           <span>© 2026 MEOWFORGE STUDIO</span>
