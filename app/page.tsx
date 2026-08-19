@@ -68,7 +68,10 @@ export default function Home() {
         <div className="feature-copy">
           <p className="eyebrow">Meet NULLSTRIDE</p>
           <h2>MOVE<br />BEYOND<br /><em>THE LINE.</em></h2>
-          <p>Velocity is your language. Defy gravity, carve a path through neon ruin, and make every encounter your own.</p>
+          <div className="game-long-description">
+            <p><strong>NULLSTRIDE</strong> is a fast-paced sci-fi action platformer combining precision melee combat with high-speed traversal.</p>
+            <p>Run across walls, leap through massive ruined structures, and cut through corrupted machines as you descend into the mysterious <strong>Null Zone</strong> in search of its hidden Core.</p>
+          </div>
           <div className="stat-row"><span>Genre</span><b>High-speed action</b></div>
           <div className="stat-row"><span>Status</span><b>Coming soon</b></div>
           <a className="text-link" href="#contact">Get on the signal <Arrow /></a>
