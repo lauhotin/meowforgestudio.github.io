@@ -9,7 +9,7 @@ a { color:inherit; text-decoration:none; }
 .eyebrow { margin:0; font:500 10px/1.2 "DM Mono",monospace; letter-spacing:.12em; text-transform:uppercase; }
 .site-nav { position:absolute; z-index:5; top:0; left:0; width:100%; display:flex; align-items:center; justify-content:space-between; padding:25px 3.4vw; color:white; font-size:12px; text-transform:uppercase; letter-spacing:.055em; }
 .wordmark { display:flex; align-items:center; gap:9px; font-size:10px; font-weight:700; line-height:.95; letter-spacing:.075em; }
-.mark { display:grid; place-items:center; width:29px; height:29px; border:1px solid currentColor; font:500 10px "DM Mono",monospace; transform:skewY(-9deg); }
+.nav-logo { width:29px; height:29px; object-fit:contain; filter:invert(1); }
 .nav-links { display:flex; gap:28px; }
 .nav-links a,.nav-cta { transition:opacity .2s; }
 .nav-links a:hover,.nav-cta:hover { opacity:.62; }
@@ -30,7 +30,9 @@ a { color:inherit; text-decoration:none; }
 .manifesto-copy { max-width:900px; }
 .manifesto h2 { margin:0 0 40px; font-size:clamp(47px,6.3vw,103px); line-height:.88; letter-spacing:-.07em; }
 .manifesto h2 em { color:var(--purple); }
-.manifesto-copy > p { max-width:420px; margin:0; font-size:17px; line-height:1.55; }
+.studio-description { max-width:435px; }
+.studio-description p { margin:0; font-size:17px; line-height:1.55; }
+.studio-description p + p { margin-top:19px; }
 .games { padding:22px 3.4vw 0; background:#1a1720; color:white; }
 .section-head { display:flex; justify-content:space-between; padding:0 0 17px; font:10px "DM Mono",monospace; letter-spacing:.1em; text-transform:uppercase; }
 .section-head p { margin:0; }
@@ -64,11 +66,11 @@ a { color:inherit; text-decoration:none; }
 .statement-type em { color:#e5c7ff; }
 footer { padding:65px 3.4vw 25px; background:#efede7; display:grid; grid-template-columns:1fr 1fr; gap:90px; }
 .footer-brand { display:flex; align-items:center; gap:18px; font-size:21px; font-weight:700; line-height:.85; letter-spacing:-.06em; }
-.footer-brand img { width:57px; height:57px; object-fit:cover; mix-blend-mode:multiply; }
+.footer-brand img { width:57px; height:57px; object-fit:contain; mix-blend-mode:multiply; }
 .footer-brand p { margin:0; }
 .footer-contact { justify-self:end; min-width:min(100%,400px); }
 .footer-contact > a { display:flex; align-items:center; justify-content:space-between; margin-top:17px; padding:0 0 12px; border-bottom:1px solid var(--ink); font-size:clamp(19px,2.3vw,31px); letter-spacing:-.05em; }
 .footer-note { margin:16px 0 0; color:#6c6970; font-size:12px; line-height:1.45; }
 .footer-bottom { grid-column:1/-1; display:flex; justify-content:space-between; padding-top:87px; font:10px "DM Mono",monospace; letter-spacing:.06em; }
 .footer-bottom a { text-decoration:underline; text-underline-offset:3px; }
-@media (max-width:700px) { .site-nav { padding:20px 20px; } .nav-links { display:none; } .nav-cta { font-size:10px; } .hero { min-height:650px; padding:132px 20px 27px; } .hero h1 { font-size:18vw; } .hero h1 i { margin-left:3vw; } .hero-bottom { font-size:13px; } .hero-side { display:none; } .manifesto { display:block; padding:80px 20px 90px; } .manifesto-copy { margin-top:70px; } .manifesto h2 { font-size:15vw; } .manifesto-copy > p { font-size:15px; } .games { padding:18px 20px 0; } .section-head p:last-child { display:none; } .game-card { height:130vw; min-height:540px; } .game-image { object-position:55% center; } .game-card-top,.game-card-bottom { left:16px; right:16px; } .game-card-top span:nth-child(2) { display:none; } .game-card-bottom { align-items:start; flex-direction:column; gap:28px; } .game-card h2 { font-size:17vw; } .game-description { margin-top:18px; font-size:13px; } .feature-split { display:block; } .feature-image-wrap { min-height:125vw; } .feature-copy { padding:70px 20px 75px; } .feature-copy h2 { font-size:18vw; } .statement { padding:90px 20px 115px; } .statement-type { font-size:17vw; } footer { grid-template-columns:1fr; gap:52px; padding:50px 20px 22px; } .footer-contact { justify-self:start; width:100%; } .footer-bottom { padding-top:28px; gap:14px; flex-wrap:wrap; font-size:9px; } }
+@media (max-width:700px) { .site-nav { padding:20px 20px; } .nav-links { display:none; } .nav-cta { font-size:10px; } .hero { min-height:650px; padding:132px 20px 27px; } .hero h1 { font-size:18vw; } .hero h1 i { margin-left:3vw; } .hero-bottom { font-size:13px; } .hero-side { display:none; } .manifesto { display:block; padding:80px 20px 90px; } .manifesto-copy { margin-top:70px; } .manifesto h2 { font-size:15vw; } .studio-description p { font-size:15px; } .games { padding:18px 20px 0; } .section-head p:last-child { display:none; } .game-card { height:130vw; min-height:540px; } .game-image { object-position:55% center; } .game-card-top,.game-card-bottom { left:16px; right:16px; } .game-card-top span:nth-child(2) { display:none; } .game-card-bottom { align-items:start; flex-direction:column; gap:28px; } .game-card h2 { font-size:17vw; } .game-description { margin-top:18px; font-size:13px; } .feature-split { display:block; } .feature-image-wrap { min-height:125vw; } .feature-copy { padding:70px 20px 75px; } .feature-copy h2 { font-size:18vw; } .statement { padding:90px 20px 115px; } .statement-type { font-size:17vw; } footer { grid-template-columns:1fr; gap:52px; padding:50px 20px 22px; } .footer-contact { justify-self:start; width:100%; } .footer-bottom { padding-top:28px; gap:14px; flex-wrap:wrap; font-size:9px; } }

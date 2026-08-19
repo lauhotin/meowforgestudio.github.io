@@ -5,7 +5,7 @@ export default function Home() {
     <main>
       <nav className="site-nav" aria-label="Primary navigation">
         <a className="wordmark" href="#top" aria-label="Meowforge Studio home">
-          <span className="mark">MF</span>
+          <img className="nav-logo" src="/meowforge-logo.png" alt="" />
           <span>MEOWFORGE<br />STUDIO</span>
         </a>
         <div className="nav-links">
@@ -31,7 +31,10 @@ export default function Home() {
         <p className="eyebrow">01 / Our signal</p>
         <div className="manifesto-copy">
           <h2>We forge <em>strange</em><br />things for the curious.</h2>
-          <p>Small team. Precise vision. We pair vivid anime-inspired art with responsive action and stories that linger after the screen goes dark.</p>
+          <div className="studio-description">
+            <p>Meowforge Studio is a Hong Kong-based indie game studio creating small but memorable interactive experiences.</p>
+            <p>We believe play is not just entertainment. It is a way to breathe, reflect, and reconnect with life.</p>
+          </div>
         </div>
       </section>
 
@@ -79,7 +82,7 @@ export default function Home() {
 
       <footer id="contact">
         <div className="footer-brand">
-          <img src="/meowforge-mark.png" alt="Meowforge Studio monogram" />
+          <img src="/meowforge-logo.png" alt="Meowforge Studio logo" />
           <p>MEOWFORGE<br />STUDIO</p>
         </div>
         <div className="footer-contact">
