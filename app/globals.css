@@ -37,9 +37,10 @@ a { color:inherit; text-decoration:none; }
 .section-head { display:flex; justify-content:space-between; padding:0 0 17px; font:10px "DM Mono",monospace; letter-spacing:.1em; text-transform:uppercase; }
 .section-head p { margin:0; }
 .game-card { position:relative; overflow:hidden; height:min(75vw,865px); min-height:600px; }
-.game-image { position:absolute; width:100%; height:100%; object-fit:contain; object-position:center; transform:scale(.94); transition:transform .7s ease; }
+.game-image { position:absolute; width:100%; height:100%; object-fit:contain; object-position:center; transform:scale(.94); transition:transform .7s ease; -webkit-user-drag:none; user-select:none; }
 .game-card:hover .game-image { transform:scale(.98); }
 .image-shade { position:absolute; inset:0; background:linear-gradient(180deg,rgba(6,5,10,.56),transparent 38%,rgba(5,3,11,.9)),linear-gradient(90deg,rgba(8,5,12,.78),rgba(8,5,12,.08) 67%,rgba(8,5,12,.4)); }
+.art-watermark { position:absolute; z-index:1; top:50%; left:50%; width:125%; transform:translate(-50%,-50%) rotate(-28deg); color:rgba(255,255,255,.46); font:600 clamp(14px,2.1vw,34px)/1 "DM Mono",monospace; letter-spacing:.28em; text-align:center; text-shadow:0 1px 14px rgba(0,0,0,.85); white-space:nowrap; pointer-events:none; user-select:none; }
 .game-card-top,.game-card-bottom { position:absolute; z-index:1; left:28px; right:28px; display:flex; }
 .game-card-top { top:27px; justify-content:space-between; font:10px "DM Mono",monospace; letter-spacing:.1em; text-transform:uppercase; }
 .game-card-bottom { bottom:28px; align-items:end; justify-content:space-between; }
@@ -50,7 +51,7 @@ a { color:inherit; text-decoration:none; }
 .discover,.text-link { display:flex; align-items:center; gap:12px; padding-bottom:6px; border-bottom:1px solid currentColor; font:500 12px "DM Mono",monospace; text-transform:uppercase; letter-spacing:.03em; white-space:nowrap; }
 .feature-split { display:grid; grid-template-columns:minmax(0,1.05fr) minmax(390px,.95fr); background:var(--paper); }
 .feature-image-wrap { position:relative; min-height:730px; overflow:hidden; background:#301065; }
-.feature-image-wrap img { width:100%; height:100%; position:absolute; inset:0; object-fit:cover; object-position:center 38%; }
+.feature-image-wrap img { width:100%; height:100%; position:absolute; inset:0; object-fit:cover; object-position:center 38%; -webkit-user-drag:none; user-select:none; }
 .feature-image-wrap p { position:absolute; left:29px; bottom:27px; margin:0; color:#fff; font:10px "DM Mono",monospace; letter-spacing:.1em; }
 .feature-copy { padding:108px clamp(35px,7vw,130px) 70px; display:flex; flex-direction:column; align-items:flex-start; }
 .feature-copy h2 { margin:29px 0 40px; font-size:clamp(57px,7.1vw,116px); line-height:.78; letter-spacing:-.085em; }
