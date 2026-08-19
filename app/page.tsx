@@ -44,7 +44,7 @@ export default function Home() {
           <p>ONE WORLD IN MOTION</p>
         </div>
         <article className="game-card" id="nullstride">
-          <img className="game-image" src="/nullstride-hero.png" alt="NULLSTRIDE protagonist lunging with a glowing red blade" draggable={false} />
+          <img className="game-image" src="/nullstride-hero-web.jpg" alt="NULLSTRIDE protagonist lunging with a glowing red blade" draggable={false} />
           <div className="image-shade" aria-hidden="true" />
           <div className="art-watermark" aria-hidden="true">© MEOWFORGE STUDIO</div>
           <div className="game-card-top">
@@ -63,7 +63,7 @@ export default function Home() {
 
       <section className="feature-split">
         <div className="feature-image-wrap">
-          <img src="/nullstride-dual.png" alt="NULLSTRIDE heroine poised with her red energy blade" draggable={false} />
+          <img src="/nullstride-dual-web.jpg" alt="NULLSTRIDE heroine poised with her red energy blade" draggable={false} />
           <div className="art-watermark" aria-hidden="true">© MEOWFORGE STUDIO</div>
           <p>NULLSTRIDE / KEY ART 02</p>
         </div>
