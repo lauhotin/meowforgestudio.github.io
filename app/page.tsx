@@ -47,6 +47,7 @@ export default function Home() {
           <img className="game-image" src="/nullstride-hero-web.jpg" alt="NULLSTRIDE protagonist lunging with a glowing red blade" draggable={false} />
           <div className="image-shade" aria-hidden="true" />
           <div className="art-watermark" aria-hidden="true">© MEOWFORGE STUDIO</div>
+          <div className="art-shield" aria-hidden="true" />
           <div className="game-card-top">
             <span>01</span><span>Action / Sci-fi</span><span>In development</span>
           </div>
@@ -65,6 +66,7 @@ export default function Home() {
         <div className="feature-image-wrap">
           <img src="/nullstride-dual-web.jpg" alt="NULLSTRIDE heroine poised with her red energy blade" draggable={false} />
           <div className="art-watermark" aria-hidden="true">© MEOWFORGE STUDIO</div>
+          <div className="art-shield" aria-hidden="true" />
           <p>NULLSTRIDE / KEY ART 02</p>
         </div>
         <div className="feature-copy">
