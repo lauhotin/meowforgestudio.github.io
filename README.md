@@ -1,14 +1,15 @@
-# MEOWFORGE STUDIO
+# MEOMI FORGE GAME STUDIO / 喵米遊戲工坊
 
-The official website for MEOWFORGE STUDIO and its upcoming game, NULLSTRIDE.
+The official bilingual website for MEOMI FORGE GAME STUDIO and NULLSTRIDE / 零域之痕.
 
-## Public deployment
+Visitors can select English or Traditional Chinese. The choice is remembered in browser storage and can be shared with `?lang=en` or `?lang=zh-Hant`.
 
-This repository is configured for Netlify. Connect the repository in Netlify and it will run `npm run build:netlify`, then publish the static `out` directory.
+The gameplay gallery contains six actual development screenshots, with an accessible full-size viewer supporting arrow keys and Escape.
 
-## Local development
+## Deployment
 
-```bash
-npm install
-npm run dev
-```
+The existing Sites project identity is retained in `.openai/hosting.json`. Netlify remains configured to run `npm run build:netlify` and publish `out`.
+
+## Development
+
+Run `npm install`, then `npx next dev` for a local preview. Run `npm run build:netlify` for the static export.
