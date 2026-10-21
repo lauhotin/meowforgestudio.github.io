@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 
 type Language = "en" | "zh-Hant";
 const Arrow = () => <span aria-hidden="true">↗</span>;
+const screenshotSource = (index: number) => index === 0 ? "/images/gameplay-01-updated.webp" : `/images/gameplay-0${index + 1}.webp`;
 const times = ["00:06", "00:12", "00:18", "00:23.5", "00:31", "00:43.5"];
 const copy = {
   en: {
@@ -27,7 +28,7 @@ const copy = {
     galleryIntro: "Actual gameplay from NULLSTRIDE. A closer look at high-speed traversal and blade combat.",
     work: "Development footage · Work in progress", enlarge: "View full screenshot", screenshot: "Gameplay screenshot", of: "of",
     captions: ["Across the megastructure", "Into the corridor", "Vertical ascent", "Along the wall", "Above the city", "Blade impact"],
-    screenshotAlts: ["The heroine on an elevated industrial platform", "The heroine running through an industrial corridor", "The heroine scaling a tall orange wall", "The heroine wall-running beside an industrial structure", "The heroine traversing the side of a high-rise structure", "The heroine striking approaching mechanical enemies with her blade"],
+    screenshotAlts: ["The heroine leaping above an elevated industrial platform", "The heroine running through an industrial corridor", "The heroine scaling a tall orange wall", "The heroine wall-running beside an industrial structure", "The heroine traversing the side of a high-rise structure", "The heroine striking approaching mechanical enemies with her blade"],
     close: "Close screenshot", previous: "Previous screenshot", next: "Next screenshot", keyboard: "Use ← → to browse · Esc to close",
     intent: "Made with intent", statementA: "Play", statementAccent: "outside", statementB: "the expected.",
     touch: "Keep in touch", contactSoon: "Contact channel", contactSoonB: "coming soon", future: "Follow future transmissions from MEOMI FORGE GAME STUDIO.",
@@ -54,7 +55,7 @@ const copy = {
     galleryIntro: "《零域之痕》實際遊玩截圖，近距離感受高速跑酷與刀劍戰鬥。",
     work: "開發中畫面 · 非最終版本", enlarge: "放大截圖", screenshot: "實機截圖", of: "/",
     captions: ["穿越巨型建築", "深入通道", "垂直攀升", "沿壁疾走", "飛越城市", "利刃衝擊"],
-    screenshotAlts: ["女主角站在高架工業平台上", "女主角穿越工業通道", "女主角攀上橙色高牆", "女主角沿著工業建築的牆壁疾走", "女主角在高層建築外側穿梭", "女主角揮劍斬向接近的機械敵人"],
+    screenshotAlts: ["女主角躍過高架工業平台", "女主角穿越工業通道", "女主角攀上橙色高牆", "女主角沿著工業建築的牆壁疾走", "女主角在高層建築外側穿梭", "女主角揮劍斬向接近的機械敵人"],
     close: "關閉截圖", previous: "上一張截圖", next: "下一張截圖", keyboard: "使用 ← → 瀏覽 · Esc 關閉",
     intent: "用心創作", statementA: "跳出", statementAccent: "框架", statementB: "玩出想像。",
     touch: "保持聯繫", contactSoon: "聯絡方式", contactSoonB: "即將公開", future: "敬請留意喵米遊戲工坊的最新消息。",
@@ -152,14 +153,14 @@ export default function Home() {
         <div className="section-head"><p className="eyebrow">{c.gallery}</p><p>{c.work}</p></div>
         <div className="gallery-intro"><h2 id="gameplay-title">{c.galleryTitle}</h2><p>{c.galleryIntro}</p></div>
         <div className="screenshot-grid">{times.map((time, index) => (
-          <figure key={time}><button type="button" className="screenshot-button" onClick={() => openShot(index)} aria-label={`${c.enlarge} ${index + 1}: ${c.captions[index]}`} aria-haspopup="dialog"><img src={`/images/gameplay-0${index + 1}.webp`} alt={c.screenshotAlts[index]} width={2560} height={1440} loading="lazy" /><span className="screenshot-expand" aria-hidden="true">↗</span></button><figcaption><span><b>0{index + 1}</b> {c.captions[index]}</span><span>{time}</span></figcaption></figure>
+          <figure key={time}><button type="button" className="screenshot-button" onClick={() => openShot(index)} aria-label={`${c.enlarge} ${index + 1}: ${c.captions[index]}`} aria-haspopup="dialog"><img src={screenshotSource(index)} alt={c.screenshotAlts[index]} width={2560} height={1440} loading="lazy" /><span className="screenshot-expand" aria-hidden="true">↗</span></button><figcaption><span><b>0{index + 1}</b> {c.captions[index]}</span><span>{time}</span></figcaption></figure>
         ))}</div><p className="gallery-note">{c.work}</p>
       </section>
       <dialog ref={dialog} className="screenshot-dialog" aria-labelledby="screenshot-title" onClose={() => { document.body.style.overflow = ""; }} onClick={(event) => { if (event.target === event.currentTarget) dialog.current?.close(); }} onKeyDown={(event) => {
         if (event.key === "ArrowLeft") { event.preventDefault(); stepShot(-1); }
         if (event.key === "ArrowRight") { event.preventDefault(); stepShot(1); }
       }}>
-        <div className="lightbox-content"><div className="lightbox-head"><p id="screenshot-title">{c.game} / {c.screenshot} {activeShot + 1} {c.of} {times.length}</p><button autoFocus type="button" onClick={() => dialog.current?.close()} aria-label={c.close}>×</button></div><img src={`/images/gameplay-0${activeShot + 1}.webp`} alt={c.screenshotAlts[activeShot]} width={2560} height={1440} /><div className="lightbox-footer"><button type="button" onClick={() => stepShot(-1)} aria-label={c.previous}>←</button><p aria-live="polite">{c.captions[activeShot]} <span>{times[activeShot]}</span></p><button type="button" onClick={() => stepShot(1)} aria-label={c.next}>→</button></div><p className="lightbox-hint">{c.keyboard}</p></div>
+        <div className="lightbox-content"><div className="lightbox-head"><p id="screenshot-title">{c.game} / {c.screenshot} {activeShot + 1} {c.of} {times.length}</p><button autoFocus type="button" onClick={() => dialog.current?.close()} aria-label={c.close}>×</button></div><img src={screenshotSource(activeShot)} alt={c.screenshotAlts[activeShot]} width={2560} height={1440} /><div className="lightbox-footer"><button type="button" onClick={() => stepShot(-1)} aria-label={c.previous}>←</button><p aria-live="polite">{c.captions[activeShot]} <span>{times[activeShot]}</span></p><button type="button" onClick={() => stepShot(1)} aria-label={c.next}>→</button></div><p className="lightbox-hint">{c.keyboard}</p></div>
       </dialog>
       <section className="statement"><p className="eyebrow">{c.intent}</p><p className="statement-type">{c.statementA} <em>{c.statementAccent}</em><br />{c.statementB}</p></section>
       <footer id="contact"><div className="footer-brand"><img src="/meowforge-logo.png" alt="" /><p>{language === "en" ? <>MEOMI FORGE<br />GAME STUDIO</> : c.studio}</p></div><div className="footer-contact"><p className="eyebrow">{c.touch}</p><p className="contact-soon">{c.contactSoon}<br />{c.contactSoonB} <Arrow /></p><p className="footer-note">{c.future}</p></div><div className="footer-bottom"><span>© 2026 {c.studio}</span><span>{c.curious}</span><a href="#top">{c.top}</a></div></footer>
